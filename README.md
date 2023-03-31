@@ -5,3 +5,5 @@ digite yarn para baixar
 
 depois digite yarn dev
 h e doepis clique no link
+
+colocar png do storybook
