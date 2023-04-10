@@ -2,14 +2,6 @@
     <img alt="Storybook-logo" title="Storybook-logo" src="./public/storybook.png" width="200px" height="200px">
 </h1>
 
-instale o yarn
-
-digite yarn para baixar
-
-
-yarn storybook
-
-
 <h1 align="center">Storybook</h1>
 
 ## 🚀 Tecnologias
