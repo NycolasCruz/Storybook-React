@@ -11,10 +11,10 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "bootstrap": "^5.2.3",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.2",
     "react-dom": "^18.2.0",
+    "react-imask": "^6.5.1-alpha.1",
     "sass": "^1.60.0"
   },
   "devDependencies": {
