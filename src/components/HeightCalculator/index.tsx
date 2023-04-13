@@ -2,11 +2,15 @@ import { useState, ChangeEvent } from "react"
 
 import Form from "react-bootstrap/Form"
 
-import { MaskedFormControl } from "../../utils/mixins"
+import { MaskedFormControl } from "../MaskedFormControl"
 
 import "./styles.scss"
 
-export function HeightCalculator() {
+type Props = {
+    resultLabel: string
+}
+
+export function HeightCalculator({resultLabel}: Props) {
     const [height, setHeight] = useState("")
 
     return(
@@ -21,8 +25,8 @@ export function HeightCalculator() {
             </Form.Group>
 
             <Form.Group className="form-group" controlId="value">
-                <Form.Label>Resultado</Form.Label>
-                <Form.Control placeholder="Resultado" value={height} readOnly />
+                <Form.Label>{resultLabel}</Form.Label>
+                <Form.Control placeholder={resultLabel} value={height} readOnly />
             </Form.Group>
         </div>
     )
