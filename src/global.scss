@@ -53,11 +53,14 @@ input {
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
-  cursor: pointer;
   transition: border-color 0.25s;
   width: 18rem;
 }
 
 input:hover{
   border-color: #646cff;
+}
+
+.disabled {
+  background-color: #1a1a1a54;
 }

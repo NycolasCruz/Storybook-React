@@ -6,7 +6,7 @@ export function App() {
 		<>
 			<Logos />
 			<h1>Calculadora de Altura</h1>
-			<HeightCalculator resultLabel="Sua altura é:" />
+			<HeightCalculator resultLabel="Sua altura é:" disabled />
 		</>
 	)
 }

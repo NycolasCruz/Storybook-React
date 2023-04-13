@@ -1,16 +1,18 @@
 import { useState, ChangeEvent } from "react"
 
 import Form from "react-bootstrap/Form"
+import classNames from "clsx"
 
 import { MaskedFormControl } from "../MaskedFormControl"
 
 import "./styles.scss"
 
 type Props = {
-    resultLabel: string
+    resultLabel: string,
+    disabled: boolean
 }
 
-export function HeightCalculator({resultLabel}: Props) {
+export function HeightCalculator({resultLabel, disabled}: Props) {
     const [height, setHeight] = useState("")
 
     return(
@@ -26,7 +28,12 @@ export function HeightCalculator({resultLabel}: Props) {
 
             <Form.Group className="form-group" controlId="value">
                 <Form.Label>{resultLabel}</Form.Label>
-                <Form.Control placeholder={resultLabel} value={height} readOnly />
+                <Form.Control
+                    className={classNames(disabled && "disabled")}
+                    placeholder={resultLabel}
+                    value={height}
+                    disabled={disabled}
+                />
             </Form.Group>
         </div>
     )
