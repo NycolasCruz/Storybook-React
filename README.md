@@ -31,12 +31,7 @@ Instale também o Yarn caso não o tenha com o comando ````npm install --global 
 
 Utilize o comando ````yarn```` para instalar os pacotes necessários.
 
-Pronto! Agora é só ligar o servidor com o comando:
-````
-yarn dev
-````
-
-Para ligar o servidor do Storybook, utilize o comando:
+Pronto! Agora é só ligar o servidor do Storybook com o comando:
 ````
 yarn storybook
 ````
