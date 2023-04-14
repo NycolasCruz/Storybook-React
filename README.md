@@ -21,7 +21,7 @@
 ## 🔧 Características
 
 - [X] Projeto Base Finalizado
-- [ ] Documentação de todos os componentes com Storybook 
+- [X] Documentação de todos os componentes com Storybook 
 
 ## 🕹️ Instalação
 
