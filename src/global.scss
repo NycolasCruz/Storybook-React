@@ -45,6 +45,12 @@ h1 {
   margin-bottom: 1rem;
 }
 
+button {
+  cursor: pointer;
+  width: 20.7rem !important;
+}
+
+button,
 input {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -53,11 +59,15 @@ input {
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
-  cursor: pointer;
   transition: border-color 0.25s;
   width: 18rem;
 }
 
-input:hover{
+button:hover,
+input:hover {
   border-color: #646cff;
+}
+
+.disabled {
+  background-color: #1a1a1a54;
 }

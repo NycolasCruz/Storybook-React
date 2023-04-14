@@ -1,33 +1,49 @@
-import { useState, ChangeEvent } from "react"
+import { useState, FormEvent } from "react"
 
+import Button from "react-bootstrap/Button"
 import Form from "react-bootstrap/Form"
+import classNames from "clsx"
 
 import { MaskedFormControl } from "../MaskedFormControl"
 
 import "./styles.scss"
 
 type Props = {
-    resultLabel: string
+    resultLabel: string,
+    disabled: boolean
 }
 
-export function HeightCalculator({resultLabel}: Props) {
+export function HeightCalculator({resultLabel, disabled}: Props) {
     const [height, setHeight] = useState("")
 
-    return(
-		<div className="card">
-            <Form.Group className="form-group" controlId="height">
-                <Form.Label>Digite sua altura</Form.Label>
-				<MaskedFormControl
-					placeholder="Digite sua altura"
-					mask={Number}
-                    onChange={(event: ChangeEvent<HTMLInputElement>) => setHeight(event.target.value)}
-				/>
-            </Form.Group>
+    function handleSubmit(event: FormEvent<HTMLFormElement>) {
+        event.preventDefault();
 
-            <Form.Group className="form-group" controlId="value">
-                <Form.Label>{resultLabel}</Form.Label>
-                <Form.Control placeholder={resultLabel} value={height} readOnly />
-            </Form.Group>
-        </div>
+		const formData = new FormData(event.currentTarget)
+		
+		setHeight(String(formData?.get("height")))
+    }
+
+    return(
+		<>
+            <Form onSubmit={(event) => handleSubmit(event)} className="card">
+				<Form.Group className="form-group" controlId="height">
+					<Form.Label>Digite sua altura</Form.Label>
+					<MaskedFormControl name="height" placeholder="Digite sua altura" mask={Number}/>
+				</Form.Group>
+
+				<Button type="submit">CALCULAR</Button>
+
+				<Form.Group className="form-group" controlId="value">
+					<Form.Label>{resultLabel}</Form.Label>
+					<Form.Control
+						className={classNames(disabled && "disabled")}
+						placeholder={resultLabel}
+						value={height}
+						disabled={disabled}
+					/>
+				</Form.Group>
+            </Form>
+        </>
     )
 }
