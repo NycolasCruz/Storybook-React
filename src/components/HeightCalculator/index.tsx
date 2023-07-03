@@ -1,35 +1,39 @@
-import { useState, FormEvent } from "react"
+import { useState, FormEvent } from "react";
+import classNames from "clsx";
 
-import Button from "react-bootstrap/Button"
-import Form from "react-bootstrap/Form"
-import classNames from "clsx"
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 
-import { MaskedFormControl } from "../MaskedFormControl"
+import { MaskedFormControl } from "../MaskedFormControl";
 
-import "./styles.scss"
+import "./styles.scss";
 
 type Props = {
-    resultLabel: string,
-    disabled: boolean
-}
+	resultLabel: string;
+	disabled: boolean;
+};
 
-export function HeightCalculator({resultLabel, disabled}: Props) {
-    const [height, setHeight] = useState("")
+export function HeightCalculator({ resultLabel, disabled }: Props) {
+	const [height, setHeight] = useState("");
 
-    function handleSubmit(event: FormEvent<HTMLFormElement>) {
-        event.preventDefault();
+	function handleSubmit(event: FormEvent<HTMLFormElement>) {
+		event.preventDefault();
 
-		const formData = new FormData(event.currentTarget)
-		
-		setHeight(String(formData?.get("height")))
-    }
+		const formData = new FormData(event.currentTarget);
 
-    return(
+		setHeight(String(formData?.get("height")));
+	}
+
+	return (
 		<>
-            <Form onSubmit={(event) => handleSubmit(event)} className="card">
+			<Form onSubmit={(event) => handleSubmit(event)} className="card">
 				<Form.Group className="form-group" controlId="height">
 					<Form.Label>Digite sua altura</Form.Label>
-					<MaskedFormControl name="height" placeholder="Digite sua altura" mask={Number}/>
+					<MaskedFormControl
+						name="height"
+						placeholder="Digite sua altura"
+						mask={Number}
+					/>
 				</Form.Group>
 
 				<Button type="submit">CALCULAR</Button>
@@ -43,7 +47,7 @@ export function HeightCalculator({resultLabel, disabled}: Props) {
 						disabled={disabled}
 					/>
 				</Form.Group>
-            </Form>
-        </>
-    )
+			</Form>
+		</>
+	);
 }

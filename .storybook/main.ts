@@ -9,6 +9,6 @@ module.exports = {
 		name: "@storybook/react-vite",
 	},
 	docs: {
-		autodocs: true
+		autodocs: true,
 	},
 };

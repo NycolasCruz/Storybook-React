@@ -1,15 +1,14 @@
 .card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2em;
-  gap: 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 2em;
+	gap: 1rem;
 }
-  
+
 .form-group {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: .5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.5rem;
 }
-  
