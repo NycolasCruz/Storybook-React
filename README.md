@@ -9,7 +9,7 @@
 <p>Projeto desenvolvido com as seguintes tecnologias:</p>
 
 - Vite
-- ReactJS
+- React
 - TypeScript
 - React Bootstrap
 - Storybook
